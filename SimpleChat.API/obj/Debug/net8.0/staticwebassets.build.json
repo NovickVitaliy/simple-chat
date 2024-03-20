@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "gbcUkP789ateYlHdZDekl3tsz8BuAb4mhDJ4cA1UiIk=",
+  "Source": "SimpleChat.API",
+  "BasePath": "_content/SimpleChat.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

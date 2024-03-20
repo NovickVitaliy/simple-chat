@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SimpleChat.API.props" />
+</Project>
