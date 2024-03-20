@@ -1,0 +1,6 @@
+@SimpleChat.API_HostAddress = http://localhost:5191
+
+GET {{SimpleChat.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
