@@ -1,0 +1,44 @@
+.auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid gray;
+  padding: 26px;
+  border-radius: 20px;
+}
+
+.form-control {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-control label {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.form-control input {
+  padding: 10px;
+}
+
+.enter-chat-btn {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: lightblue;
+  border-style: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.enter-chat-btn:hover {
+  background-color: cadetblue;
+}
+
+.submit {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}

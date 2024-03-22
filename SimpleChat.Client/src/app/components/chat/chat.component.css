@@ -1,0 +1,34 @@
+.chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+:host {
+  height: 90%;
+  width: 80%;
+}
+
+.message-form {
+  display: flex;
+  gap: 5px;
+}
+
+.message-form input {
+  width: 70%;
+}
+
+.message-form button {
+  width: 30%;
+  padding: 10px;
+}
+
+.messages {
+  overflow: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/*# sourceMappingURL=chat.component.css.map */

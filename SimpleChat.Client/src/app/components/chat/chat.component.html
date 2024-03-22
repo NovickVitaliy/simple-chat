@@ -1,0 +1,11 @@
+<div class="chat">
+  <div class="messages">
+    <div *ngFor="let message of messages">
+      <b>{{message.author}}</b>:{{message.message}}
+    </div>
+  </div>
+  <div class="message-form">
+    <input type="text" [(ngModel)]="messageText">
+    <button (click)="sendMessageToChat()">Send</button>
+  </div>
+</div>
