@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.SignalR;
-using SimpleChat.API.Configurations;
+using SimpleChat.API.Hubs.ClientHub;
 using SimpleChat.API.Models;
 
 namespace SimpleChat.API.Hubs;
 
-public class ChatHub : Hub
+public class ChatHub : Hub<IChatHub>
 {
-    private ILogger<ChatHub> _logger;
+    private readonly ILogger<ChatHub> _logger;
 
     public ChatHub(ILogger<ChatHub> logger)
     {
@@ -15,7 +15,7 @@ public class ChatHub : Hub
 
     public async Task SendMessage(SendMessageRequest request)
     {
-        await Clients.All.SendAsync(ClientEndpoints.ReceiveMessageEndpoint, new ReceiveMessageResponse()
+        await Clients.All.ReceiveMessage(new ReceiveMessageResponse()
         {
             Author = request.Username,
             Message = request.Message
