@@ -22,6 +22,14 @@
 .message-form button {
   width: 30%;
   padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
+.message-form button:hover {
+  background-color: darkgreen;
 }
 
 .messages {
@@ -29,6 +37,11 @@
   max-height: 100%;
   display: flex;
   flex-direction: column-reverse;
+}
+
+.messages > div {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 

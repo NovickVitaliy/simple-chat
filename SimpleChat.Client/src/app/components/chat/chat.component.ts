@@ -36,7 +36,7 @@ export class ChatComponent implements OnInit {
   }
   ngOnInit(): void {
     this.hubConnection?.on(environment.receiveMessageEndpoints, (message: Message) => {
-      this.messages.push(message);
+      this.messages = [message, ...this.messages];
     })
 
     this.hubConnection?.start();

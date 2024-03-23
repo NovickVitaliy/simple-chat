@@ -22,6 +22,17 @@
 
 .form-control input {
   padding: 10px;
+  outline: none;
+  border-radius: 16px;
+  border: 2px solid gray;
+}
+
+.form-control input:hover {
+  border-color: black;
+}
+
+.form-control input:focus {
+  border-color: black;
 }
 
 .enter-chat-btn {
