@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {HubConnection} from "@microsoft/signalr";
 import {User} from "../../models/user";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-auth',
@@ -13,7 +14,7 @@ export class AuthComponent implements OnChanges {
   }
   username: string = '';
   @Output() newUser: EventEmitter<User> = new EventEmitter<User>();
-  enterChat() {
+  enterChat(form: NgForm) {
     console.log(this.username)
     if(this.username) {
       this.newUser.emit({

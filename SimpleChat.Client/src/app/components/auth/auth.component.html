@@ -1,11 +1,11 @@
-<div class="auth-form">
+<form #authForm='ngForm' (ngSubmit)="enterChat(authForm)" class="auth-form">
   <h1>Login</h1>
   <div class="form-control">
     <label for="username">Username</label>
-    <input type="text" [(ngModel)]="username" id="username">
+    <input type="text" [(ngModel)]="username" [defaultValue]="''" name="username" id="username">
   </div>
-  <div class="submit" (click)="enterChat()">
+  <div class="submit">
     <button class="enter-chat-btn">Enter chat</button>
   </div>
-</div>
+</form>
 

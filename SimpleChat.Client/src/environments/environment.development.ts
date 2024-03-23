@@ -1,4 +1,5 @@
 export const environment = {
   sendMessageEndpoint: 'sendMessage',
-  receiveMessageEndpoints: 'receiveMessage'
+  receiveMessageEndpoints: 'receiveMessage',
+  updateUserCount: 'updateUserCount'
 };

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimpleChat.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9e8303b76e6287e17ee10e47522fa3ead50a66c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91a7d175c82adb6be48a808abf577441c36c649a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimpleChat.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimpleChat.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

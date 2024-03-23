@@ -1,11 +1,18 @@
+<div>Current count of users: {{chatUsers}}</div>
 <div class="chat">
   <div class="messages">
     <div *ngFor="let message of messages">
-      <b>{{message.author}}</b>:{{message.message}}
+      <span *ngIf="message.type === MessageType.Message">
+        <b>{{message.author}}</b>:{{message.message}}
+      </span>
+      <span *ngIf="message.type !== MessageType.Message">
+        <p *ngIf="message.type === MessageType.Connected" style="color: limegreen">User {{message.author}} connected</p>
+        <p *ngIf="message.type === MessageType.Disconnected" style="color: red">User {{message.author}} disconnected</p>
+      </span>
     </div>
   </div>
-  <div class="message-form">
-    <input type="text" [(ngModel)]="messageText">
-    <button (click)="sendMessageToChat()">Send</button>
-  </div>
+  <form #f='ngForm' (ngSubmit)="sendMessageToChat(f)" class="message-form">
+    <input type="text" name="messageText" [(ngModel)]="messageText">
+    <button type="submit">Send</button>
+  </form>
 </div>

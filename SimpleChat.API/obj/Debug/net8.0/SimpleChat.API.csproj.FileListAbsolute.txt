@@ -31,3 +31,4 @@ C:\Users\User\Desktop\projects\simple-chat\SimpleChat.API\obj\Debug\net8.0\refin
 C:\Users\User\Desktop\projects\simple-chat\SimpleChat.API\obj\Debug\net8.0\SimpleChat.API.pdb
 C:\Users\User\Desktop\projects\simple-chat\SimpleChat.API\obj\Debug\net8.0\SimpleChat.API.genruntimeconfig.cache
 C:\Users\User\Desktop\projects\simple-chat\SimpleChat.API\obj\Debug\net8.0\ref\SimpleChat.API.dll
+C:\Users\User\Desktop\projects\simple-chat\SimpleChat.API\obj\Debug\net8.0\SimpleChat.API.sourcelink.json

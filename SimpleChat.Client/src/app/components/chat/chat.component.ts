@@ -6,6 +6,8 @@ import {SendMessageRequest} from "../../models/sendMessageRequest";
 import {User} from "../../models/user";
 import {Message} from "../../models/message";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {MessageType} from "../../models/message-type";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-chat',
@@ -17,8 +19,10 @@ export class ChatComponent implements OnInit {
   @Input({required: true}) user: User | null = null;
   @Input({required: true}) hubConnection: HubConnection | null = null;
   messages: Message[] = [];
+  chatUsers: number = 0;
 
-  sendMessageToChat() {
+  sendMessageToChat(form: NgForm) {
+    console.log(form.value)
     console.log(this.messageText)
     console.log(this.user);
     if (this.messageText && this.user) {
@@ -31,14 +35,27 @@ export class ChatComponent implements OnInit {
         })
         .catch(error => {
           console.error(error);
-        });
+        }).finally(() => {
+          this.messageText = '';
+      });
     }
   }
   ngOnInit(): void {
+
+    this.setSignalrEndpoints();
+
+    this.hubConnection?.start();
+  }
+
+  protected readonly MessageType = MessageType;
+
+  private setSignalrEndpoints() {
     this.hubConnection?.on(environment.receiveMessageEndpoints, (message: Message) => {
       this.messages = [message, ...this.messages];
     })
 
-    this.hubConnection?.start();
+    this.hubConnection?.on(environment.updateUserCount, (userCount: number) => {
+      this.chatUsers = userCount;
+    });
   }
 }

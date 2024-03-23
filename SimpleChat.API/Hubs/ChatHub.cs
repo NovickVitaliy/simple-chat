@@ -7,6 +7,7 @@ namespace SimpleChat.API.Hubs;
 public class ChatHub : Hub<IChatHub>
 {
     private readonly ILogger<ChatHub> _logger;
+    private static int _usersCount;
 
     public ChatHub(ILogger<ChatHub> logger)
     {
@@ -18,13 +19,22 @@ public class ChatHub : Hub<IChatHub>
         await Clients.All.ReceiveMessage(new ReceiveMessageResponse()
         {
             Author = request.Username,
-            Message = request.Message
+            Message = request.Message,
+            Type = MessageType.Message
         });
     }
 
-    public override Task OnConnectedAsync()
+    public override async Task OnConnectedAsync()
     {
         _logger.LogInformation($"User connected with id of: {Context.ConnectionId}");
-        return base.OnConnectedAsync();
+        _usersCount++;
+        await Clients.All.UpdateUserCount(_usersCount);
+    }
+
+    public override async Task OnDisconnectedAsync(Exception? exception)
+    {
+        _logger.LogInformation($"User disconnected with id of: {Context.ConnectionId}");
+        _usersCount--;
+        Clients.All.UpdateUserCount(_usersCount);
     }
 }
